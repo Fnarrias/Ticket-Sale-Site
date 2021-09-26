@@ -1,15 +1,22 @@
 
-const { TriviaModel } = require("../models/Trivias");
+const { UserModel } = require("../models/User");
+const bcrypt = require('bcrypt');
 
-const newTrivia = async (req, res) => {
+const newUser = async (req, res) => {
   try {
-    const {nombre, tema, trivia } = req.body;
+    const {nombre, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10)
 
-    const doc = await TriviaModel.create({
+    // console.log(salt);
+    //console.log(hashedPassword);
+
+    const doc = await UserModel.create({
         nombre: nombre,
-        tema: tema,
-        trivia: trivia
+        email: email,
+        password: hashedPassword,
+        conciertosComprados: []
     });
+
 
     res.status(201).json(doc);
     
@@ -19,4 +26,4 @@ const newTrivia = async (req, res) => {
   }
 };
 
-module.exports = newTrivia;
+module.exports = newUser;
