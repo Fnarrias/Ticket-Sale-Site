@@ -5,7 +5,7 @@ const router = Router();
 
 router.post("/newuser", require("../../controllers/createUser"));
 
-router.get("/login", require("../../controllers/login"));
+router.post("/login", require("../../controllers/login"));
 
 // router.get("/:tema", require("../../controllers/getTriviasByTema"));
 

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Login from "./components/Login";
+import Registro from "./components/Registro";
+import BuscaConcierto from "./components/BuscaConcierto";
 
 const App = () => {
   const [msg, setMsg] = useState();
@@ -10,9 +13,12 @@ const App = () => {
   }, []);
   return (
     <>
-      <h2>
+      {/* <h2>
         Mensaje del backend: <code>{JSON.stringify(msg)}</code>
-      </h2>
+      </h2> */}
+      {/* <Login /> */}
+      {/* <Registro /> */}
+      <BuscaConcierto />
     </>
   );
 };

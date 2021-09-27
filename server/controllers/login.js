@@ -17,7 +17,7 @@ try {
         if(!await bcrypt.compare(password, doc.password)){
             return res.status(401).json({ message: "Usuario o password erróneos" })
         }else{
-            return res.status(200).json({ message: "Success" })
+            return res.status(200).json({ message: true })
         }
     }
 
