@@ -14,34 +14,34 @@ import IngresarConcierto from "./views/IngresarConcierto";
 const App = () => {
   return (
     <>
-      {/* <h2>
-        Mensaje del backend: <code>{JSON.stringify(msg)}</code>
-      </h2> */}
-      {/* <Login /> */}
-      {/* <Registro /> */}
-      <BuscaConcierto />
+      {/* <BuscaConcierto /> */}
+      <Router>
+        <Nav />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/ingresoConcierto">
+            <IngresarConcierto />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/registro">
+            <Registro />
+          </Route>
+          <Route path="/genero">
+            <Genero />
+          </Route>
+          <Route path="/concierto">
+            <Conciertos />
+          </Route>
+          <Route path="/artista" exact>
+            <Artistas />
+          </Route>
+        </Switch>
+      </Router>
     </>
-    <Router>
-      <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/ingresoConcierto">
-          <IngresarConcierto />
-        </Route>
-
-        <Route path="/genero">
-          <Genero />
-        </Route>
-        <Route path="/concierto">
-          <Conciertos />
-        </Route>
-        <Route path="/artista" exact>
-          <Artistas />
-        </Route>
-      </Switch>
-    </Router>
   );
 };
 

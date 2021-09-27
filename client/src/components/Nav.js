@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Box, Toolbar, Button, Typography } from "@mui/material";
+import BuscaConcierto from "./BuscaConcierto";
 
 const Nav = () => {
   //! agrego Nav para usar mui como prueba
@@ -23,9 +24,7 @@ const Nav = () => {
               <Link to="/concierto">Conciertos</Link>
             </Button>
           </Typography>
-
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Register</Button>
+          <BuscaConcierto />
         </Toolbar>
       </AppBar>
     </Box>

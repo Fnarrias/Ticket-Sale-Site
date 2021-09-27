@@ -6,15 +6,18 @@ const BuscaConcierto = () => {
     const items = [
         {
           id: 0,
-          name: 'Cobol'
+          name: 'Alanis',
+          type: 'Artista'
         },
         {
           id: 1,
-          name: 'JavaScript'
+          name: 'Santiago',
+          type: 'Cuidad'
         },
         {
           id: 2,
-          name: 'Basic'
+          name: 'Rock',
+          type: 'Género'
         },
         {
           id: 3,
@@ -25,43 +28,19 @@ const BuscaConcierto = () => {
           name: 'Java'
         }
       ]
-      const handleOnSearch = (string, results) => {
-        // onSearch will have as the first callback parameter
-        // the string searched and for the second the results.
-        console.log(string, results)
-      }
-    
-      const handleOnHover = (result) => {
-        // the item hovered
-        console.log(result)
-      }
     
       const handleOnSelect = (item) => {
         // the item selected
-        console.log(item)
+        console.log(`Aquí apreto seleccionar${JSON.stringify(item)}`)
       }
-    
-      const handleOnFocus = () => {
-        console.log('Focused')
-      }
-    
-      const formatResult = (item) => {
-        return item;
-       // return (<p dangerouslySetInnerHTML={{__html: '<strong>'+item+'</strong>'}}></p>); //To format result as html
-      }
-    
+
     return (
         <div>
-            <h2>Busqueda</h2>
             <div style={{ width: 400 }}>
                 <ReactSearchAutocomplete
                 items={items}
-                onSearch={handleOnSearch}
-                onHover={handleOnHover}
                 onSelect={handleOnSelect}
-                onFocus={handleOnFocus}
                 autoFocus
-                formatResult={formatResult}
                 />
             </div>
         </div>
