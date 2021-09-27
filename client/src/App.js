@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
 import Registro from "./components/Registro";
-import BuscaConcierto from "./components/BuscaConcierto";
 import Nav from "./components/Nav";
 import Artistas from "./views/Artistas";
 import Conciertos from "./views/Conciertos";
@@ -14,7 +13,6 @@ import IngresarConcierto from "./views/IngresarConcierto";
 const App = () => {
   return (
     <>
-      {/* <BuscaConcierto /> */}
       <Router>
         <Nav />
         <Switch>
