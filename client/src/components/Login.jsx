@@ -6,12 +6,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import autenticar from '../actions/Autenticacion';
 
 const Login = () => {
+    //Estilos
     const paperStyle = {padding: 20, height:'50vh', width: 280, margin:'20px auto'}
     const avatarStyle = {backgroundColor:'#d83f87'}
     const textFieldStyle = {margin: 5}
     const buttonStyle = {marginTop: 25}
     const typographyStyle = {marginTop: 10}
-
+    //------------------
     const handleSubmit = (e)=>{
         e.preventDefault();
         const form = e.target;
