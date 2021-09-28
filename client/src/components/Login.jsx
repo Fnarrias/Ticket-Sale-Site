@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReactLink } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { Avatar, Button, Link, TextField, Typography } from "@mui/material";
@@ -92,7 +93,11 @@ const Login = () => {
             </Button>
           </form>
           <Typography style={typographyStyle} fullWidth>
-            ¿No tienes cuenta? <Link href="#">Regístrate</Link>
+            {/* //! Gabriel: Corregido redirect */}
+            ¿No tienes cuenta?{" "}
+            <ReactLink to="/registro">
+              <Link>Regístrate</Link>{" "}
+            </ReactLink>
           </Typography>
         </Paper>
       </Grid>

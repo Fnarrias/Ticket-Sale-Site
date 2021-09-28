@@ -1,10 +1,10 @@
 import React from "react";
-
+import CrearConciertoButton from "../components/CrearConciertoButton";
 
 const Home = () => {
   return (
     <>
-      <h1>Estas en Home</h1>
+      <CrearConciertoButton />
     </>
   );
 };

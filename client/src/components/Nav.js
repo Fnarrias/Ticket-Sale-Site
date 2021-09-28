@@ -1,35 +1,71 @@
 import React from "react";
 import { Link as ReactLink } from "react-router-dom";
-import { AppBar, Box, Toolbar, Button, Typography, Link } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Button,
+  Typography,
+  Link,
+  Paper,
+} from "@mui/material";
 import BuscaConcierto from "./BuscaConcierto";
+import Imagen from "../images/pexels-eberhard-grossgasteiger-844297.jpg";
 
 const Nav = () => {
+  const navStyle = {
+    backgroundImage: `url(${Imagen})`,
+    height: "auto",
+    width: "auto",
+    padding: "5vh",
+    textAlign: "center",
+
+    ticketStyle: {
+      marginBottom: "0px",
+    },
+
+    boxStyle: { marginBottom: "5vh" },
+  };
   return (
     <>
-      <Box sx={{ justifyContent: "flex-end" }}>
-        <AppBar position="static">
-          {" "}
-          {/* //!Static para evitar que se sobrepongan */}
-          <Toolbar>
-            <Typography>
-              <Button>
-                <ReactLink to="/login" style={{ textDecoration: "none" }}>
-                  <Link underline="none" sx={{ color: "#ffffff" }}>
-                    Login
-                  </Link>
-                </ReactLink>
-              </Button>
-              <Button>
-                <ReactLink to="/registro" style={{ textDecoration: "none" }}>
-                  <Link underline="none" sx={{ color: "#ffffff" }}>
-                    Registrar
-                  </Link>
-                </ReactLink>
-              </Button>
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <Paper style={navStyle}>
+        <Box color="transparent" style={navStyle.boxStyle}>
+          <AppBar position="static" color="transparent">
+            {" "}
+            {/* //!Static para evitar que se sobrepongan */}
+            <Toolbar sx={{ flexDirection: "row-reverse" }}>
+              <Typography>
+                <Button
+                  variant="contained"
+                  sx={{ mr: 2, backgroundColor: "#44318d" }}
+                >
+                  <ReactLink to="/login" style={{ textDecoration: "none" }}>
+                    <Link underline="none" sx={{ color: "#ffffff" }}>
+                      Login
+                    </Link>
+                  </ReactLink>
+                </Button>
+                <Button variant="contained" sx={{ backgroundColor: "#44318d" }}>
+                  <ReactLink to="/registro" style={{ textDecoration: "none" }}>
+                    <Link underline="none" sx={{ color: "#ffffff" }}>
+                      Registrar
+                    </Link>
+                  </ReactLink>
+                </Button>
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Box>
+        <Typography
+          variant="h1"
+          component="div"
+          gutterBottom
+          style={navStyle.ticketStyle}
+        >
+          Live-Ticket
+        </Typography>
+      </Paper>
+
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar sx={{ backgroundColor: "#44318d" }}>
