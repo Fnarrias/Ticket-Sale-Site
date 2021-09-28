@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 //?agregaria el Link para enlazar el boton de comprar...
 import { useParams } from "react-router-dom";
 import fetchConciertoPorId from "../actions/fetchConciertoPorId";
-import Nav from "./Nav";
 
 const Conciertos = () => {
   const [conciertoProps, setConciertoProps] = useState(null);
@@ -23,7 +22,6 @@ const Conciertos = () => {
     return (
       <>
         {/* //! estructura provicional falta adicionar MUI*/}
-        <Nav />
         <div>
           <div>
             <h1>Detalles sobre: {conciertoProps.nombreConcierto}</h1>{" "}

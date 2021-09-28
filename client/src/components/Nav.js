@@ -19,12 +19,16 @@ const Nav = () => {
     width: "auto",
     padding: "5vh",
     textAlign: "center",
-
     ticketStyle: {
       marginBottom: "0px",
     },
-
     boxStyle: { marginBottom: "5vh" },
+    navFix: {
+      marginLeft: "15vh",
+    },
+    toolbarFix: {
+      paddingRight: "20vh",
+    },
   };
   return (
     <>
@@ -65,11 +69,18 @@ const Nav = () => {
           Live-Ticket
         </Typography>
       </Paper>
-
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
-          <Toolbar sx={{ backgroundColor: "#44318d" }}>
-            <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+          <Toolbar
+            sx={{ backgroundColor: "#44318d" }}
+            style={navStyle.toolbarFix}
+          >
+            <Typography
+              variant="h3"
+              component="div"
+              sx={{ flexGrow: 1 }}
+              style={navStyle.navFix}
+            >
               <Button>
                 <ReactLink to="/" style={{ textDecoration: "none" }}>
                   <Link underline="none" sx={{ color: "#ffffff" }}>
