@@ -6,12 +6,12 @@ const BuscaConcierto = () => {
     {
       id: 0,
       name: "Alanis",
-      type: "Artista",
+      type: "Artista"
     },
     {
       id: 1,
       name: "Santiago",
-      type: "Cuidad",
+      type: "Cuidad"
     },
     {
       id: 2,
@@ -20,7 +20,8 @@ const BuscaConcierto = () => {
     },
     {
       id: 3,
-      name: "PHP",
+      name: "Valparaíso",
+      type: "Cuidad"
     },
     {
       id: 4,
@@ -39,6 +40,7 @@ const BuscaConcierto = () => {
         <ReactSearchAutocomplete
           items={items}
           onSelect={handleOnSelect}
+          fuseOptions= {{threshold: 0.1}}
           autoFocus
         />
       </div>
