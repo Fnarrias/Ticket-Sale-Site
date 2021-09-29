@@ -59,4 +59,4 @@ Content-Type: application/json
 
 ### Array buscador
 
-GET http://localhost:5000/api/matrizBusador
+GET http://localhost:5000/api/matrizBuscador

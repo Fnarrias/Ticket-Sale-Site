@@ -1,0 +1,22 @@
+### New User
+
+POST http://localhost:5000/api/user/newuser
+Content-Type: application/json
+
+{
+    "nombre": "Juan Pérez 5",
+    "email": "jperez5@gmail.com",
+    "password": "123456",
+    "conciertosComprados": []
+}
+
+
+### login
+
+POST http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{
+    "email": "jperez5@gmail.com",
+    "password": "123456"
+}
