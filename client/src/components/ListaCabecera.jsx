@@ -1,18 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ListaCabecera = (props) => {
-    const {listado, titulo} = props;
-    const tipo = "Artista"
-    const nombreartista = "Metallica"
-    return (
-        <div>
-            <h1>{titulo}</h1>
-            <p>{JSON.stringify(listado)}</p>
-            <Link to={`/${tipo}/${nombreartista}`}>Link hacia los conciertos</Link>
-            {/* en cada ciuadro link a detalle enviando el nombre del artista, nombre ciudad o nombre de genero además por qué buscar(artista, genero o ciudad)*/}
-        </div>
-    );
-}
+  const { listado, tipo } = props;
+  console.log(listado);
+
+  const lista = listado.map((element, index) => (
+    <li key={index}>
+      <p>{element.nombre}</p>
+
+      <Link to={`/${tipo}/${element.nombre}`}>
+        ver conciertos de {element.nombre}
+      </Link>
+    </li>
+  ));
+
+  return (
+    <div>
+      <ul>{lista}</ul>
+    </div>
+  );
+};
 
 export default ListaCabecera;

@@ -1,25 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import fetchListaCiudades from "../actions/fetchListaCiudades";
 import ListaCabecera from "../components/ListaCabecera";
 
 const Ciudades = () => {
- //Use effect que busca todas las ciudades con concierto y manda su info
- const ciudades = 
- [
-   {Nombre: "nombre ciudad",
-    Descripcion: "leyenda de ciudad",
-    urlImagen: "url"
-   },
-   {Nombre: "nombre artista",
-    Descripcion: "leyenda de ciudad",
-    urlImagen: "url"
-   }
- ]
-    return (
-        <div>
-            <h1>Ciudades</h1>
-            <ListaCabecera listado={ciudades} titulo="Ciudades"/>
-        </div>
-    );
-}
+  const [ciudades, setCiudades] = useState([]);
+
+  useEffect(() => {
+    fetchListaCiudades().then((res) => setCiudades(res.data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Ciudades</h1>
+      <ListaCabecera listado={ciudades} tipo="ciudad" />
+    </div>
+  );
+};
 
 export default Ciudades;

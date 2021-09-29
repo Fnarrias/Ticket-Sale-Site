@@ -11,29 +11,29 @@ Content-Type: application/json
 }
 
 ### Cear Recinto
-POST http://localhost:5000/api/recinto/new
+POST http://localhost:5000/api/recinto
 Content-Type: application/json
 
 {
-    "nombre": "GGG Arena",
+    "nombre": "Valdivia Arena",
     "sectores": [ {"nombre": "galeria", "capacidad": 3000}, {"nombre": "platea", "capacidad": 300}, {"nombre": "asiento frontal", "capacidad": 500}, {"nombre": "frontal vip", "capacidad": 200 } ],
-    "ciudad": "Santiago"
+    "ciudad": "Valdivia"
             
     
 }
 
 ### Crear Concierto
 
-POST http://localhost:5000/api/concierto/new
+POST http://localhost:5000/api/concierto
 Content-Type: application/json
 
 {
-    "nombre": "Backstreet Boys World Tour",
-    "nombreArtista": "Backstreet Boys",
-    "nombreRecinto": "GGG Arena",
-    "fecha": "2021-11-20",
+    "nombre": "Metallica World Tour",
+    "nombreArtista": "Metallica",
+    "nombreRecinto": "Valdivia Arena",
+    "fecha": "2021-11-05",
     "descripción": "La última gira de la legendaria banda, promocionando su último album",
-    "precios": [{"nombre":"galeria", "precio": 5000}]
+    "precios": [{"nombre":"galeria", "precio": 5000}, {"nombre":"platea", "precio": 15000}, {"nombre":"asiento frontal", "precio": 20000}, {"nombre":"frontal vip", "precio": 50000} ]
     
             
     
@@ -41,17 +41,21 @@ Content-Type: application/json
 
 ### Todos los  Conciertos
 
-GET http://localhost:5000/api/concierto/todos
+GET http://localhost:5000/api/concierto
+
+### Concierto por Id
+
+GET http://localhost:5000/api/concierto/porId/615477941bc6792b22fd1a73
 
 
-### ComprarTicket
+### Comprar Entrada
 
-PUT  http://localhost:5000/api/concierto/tickets/6153912896f2f36c937c76bd
+PUT  http://localhost:5000/api/concierto/entradas/615477941bc6792b22fd1a73
 Content-Type: application/json
 
 {
     "nombreSector": "galeria",
-    "cantidad": 10
+    "cantidad": 1
     
             
     
@@ -60,3 +64,26 @@ Content-Type: application/json
 ### Array buscador
 
 GET http://localhost:5000/api/matrizBuscador
+
+### Lista de Artistas con Concierto
+
+GET http://localhost:5000/api/artista/listaArtistas
+
+### Lista de Ciudades con Concierto
+
+GET http://localhost:5000/api/recinto/listaCiudades
+
+### Lista de Generos con Concierto
+GET http://localhost:5000/api/concierto/listaGeneros
+
+### Conciertos por Artista
+
+GET http://localhost:5000/api/concierto/porArtista/Metallica
+
+### Conciertos por Genero
+
+GET http://localhost:5000/api/concierto/porGenero/Pop
+
+### Conciertos por Ciudad
+
+GET http://localhost:5000/api/concierto/porCiudad/Valparaiso

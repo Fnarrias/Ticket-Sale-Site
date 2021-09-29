@@ -8,6 +8,7 @@ import Artistas from "./views/Artistas";
 import Ciudades from "./views/Ciudades";
 import Genero from "./views/Genero";
 import Home from "./views/Home";
+import ComprarEntradas from "./components/ComprarEntradas";
 import IngresarConcierto from "./views/IngresarConcierto";
 import Listadetalle from "./components/Listadetalle";
 
@@ -29,23 +30,26 @@ const App = () => {
           <Route path="/registro">
             <Registro />
           </Route>
-          <Route path="/genero">
+          <Route path="/artista/:nombre" exact>
+            <Listadetalle tipo="artista" />
+          </Route>
+          <Route path="/ciudad/:nombre" exact>
+            <Listadetalle tipo="ciudad" />
+          </Route>
+          <Route path="/genero/:nombre" exact>
+            <Listadetalle tipo="genero" />
+          </Route>
+          <Route path="/generos" exact>
             <Genero />
           </Route>
-          <Route path="/ciudades">
+          <Route path="/ciudades" exact>
             <Ciudades />
           </Route>
-          <Route path="/artista" exact>
+          <Route path="/artistas" exact>
             <Artistas />
           </Route>
-          <Route path="/artista/:nombreArtista" exact>
-            <Listadetalle />
-          </Route>
-          <Route path="/ciudades/:nombreCiudad" exact>
-            <Listadetalle />
-          </Route>
-          <Route path="/genero/:nombreGenero" exact>
-            <Listadetalle />
+          <Route path="/entradas/:idConcierto" exact>
+            <ComprarEntradas />
           </Route>
         </Switch>
       </Router>

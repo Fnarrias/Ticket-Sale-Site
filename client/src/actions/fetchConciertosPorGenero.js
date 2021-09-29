@@ -1,6 +1,6 @@
-const fetchConciertoPorId = async (id) => {
+const fetchConciertosPorGenero = async (genero) => {
   try {
-    const resultado = await fetch(`/api/concierto/porId/${id}`);
+    const resultado = await fetch(`/api/concierto/porGenero/${genero}`);
 
     const parsed = await resultado.json();
     if (!resultado.ok) throw new Error(parsed.message);
@@ -12,4 +12,4 @@ const fetchConciertoPorId = async (id) => {
   }
 };
 
-export default fetchConciertoPorId;
+export default fetchConciertosPorGenero;

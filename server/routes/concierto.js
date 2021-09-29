@@ -2,10 +2,26 @@ const { Router } = require("express");
 
 const router = Router();
 
-router.post("/new", require("../controllers/crearConcierto"));
-router.get("/todos", require("../controllers/todoConcierto"));
-router.put("/tickets/:conciertoID", require("../controllers/comprarTicket"));
-router.get("/:conciertoID", require("../controllers/conciertoPorId"));
+router.post("/", require("../controllers/crearConcierto"));
+router.get("/", require("../controllers/todoConcierto"));
+
+router.get("/listaGeneros", require("../controllers/listaGeneros.js"));
+
+router.put("/entradas/:conciertoID", require("../controllers/comprarEntrada"));
+router.get(
+  "/porArtista/:nombreArtista",
+  require("../controllers/conciertosPorArtista")
+);
+router.get("/porId/:conciertoId", require("../controllers/conciertoPorId"));
+router.get(
+  "/porGenero/:nombreGenero",
+  require("../controllers/conciertosPorGenero")
+);
+router.get(
+  "/porCiudad/:nombreCiudad",
+  require("../controllers/conciertosPorCiudad")
+);
+
 router.delete("/:conciertoID", require("../controllers/deleteConcierto"));
 
 module.exports = router;

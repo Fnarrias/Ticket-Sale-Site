@@ -2,8 +2,8 @@ const { ConciertoModel } = require("../models/Concierto");
 
 const conciertoPorId = async (req, res) => {
   try {
-    const { _id } = req.params;
-    const concierto = await ConciertoModel.findById(_id);
+    const { conciertoId } = req.params;
+    const concierto = await ConciertoModel.findById(conciertoId);
 
     res.json(concierto);
   } catch (e) {

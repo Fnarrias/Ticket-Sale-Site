@@ -1,6 +1,6 @@
 const { ConciertoModel } = require("../models/Concierto");
 
-const comprarTicket = async (req, res) => {
+const comprarEntrada = async (req, res) => {
   try {
     const { conciertoID } = req.params;
     const { nombreSector, cantidad } = req.body;
@@ -19,4 +19,4 @@ const comprarTicket = async (req, res) => {
   }
 };
 
-module.exports = comprarTicket;
+module.exports = comprarEntrada;

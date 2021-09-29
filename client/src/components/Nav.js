@@ -89,14 +89,14 @@ const Nav = () => {
                 </ReactLink>
               </Button>
               <Button>
-                <ReactLink to="/artista" style={{ textDecoration: "none" }}>
+                <ReactLink to="/artistas" style={{ textDecoration: "none" }}>
                   <Link underline="none" sx={{ color: "#ffffff" }}>
                     Artista
                   </Link>
                 </ReactLink>
               </Button>
               <Button>
-                <ReactLink to="/genero" style={{ textDecoration: "none" }}>
+                <ReactLink to="/generos" style={{ textDecoration: "none" }}>
                   <Link underline="none" sx={{ color: "#ffffff" }}>
                     Genero
                   </Link>

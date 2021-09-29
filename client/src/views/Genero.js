@@ -1,25 +1,19 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import fetchListaGeneros from "../actions/fetchListaGeneros";
 import ListaCabecera from "../components/ListaCabecera";
 
-
-
 const Genero = () => {
-   //Use effect que busca todos los generos y manda su info
-   const generos = 
-   [
-     {Nombre: "nombre género",
-      Descripcion: "leyenda de género",
-      urlImagen: "url"
-     },
-     {Nombre: "nombre género",
-      Descripcion: "leyenda de género",
-      urlImagen: "url"
-     }
-   ]
+  const [generos, setGeneros] = useState([]);
+
+  useEffect(() => {
+    fetchListaGeneros().then((res) => setGeneros(res.data));
+  }, []);
+
   return (
     <div>
       <h1>genero</h1>
-      <ListaCabecera listado={generos} titulo="Generos"/>
+      <ListaCabecera listado={generos} tipo="genero" />
     </div>
   );
 };
