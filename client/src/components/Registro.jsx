@@ -4,9 +4,13 @@ import Paper from "@mui/material/Paper";
 import { Avatar, Button, TextField } from "@mui/material";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import registro from "../actions/Registro";
+import { useHistory } from "react-router-dom";
 
 
 const Registro = () => {
+
+  let history = useHistory();
+
   const paperStyle = {
     padding: 20,
     height: "70vh", //?Gabriel: cambie de 50vh a 70vh
@@ -40,7 +44,8 @@ const Registro = () => {
         form
           .querySelectorAll(`input:not([type="submit"])`)
           .forEach((input) => (input.value = ""));
-        window.alert("Usuario creado con éxito");
+          //redirecciona a login
+          history.push("/login")
       } else {
         window.alert(`No se pudo registrar. ${message}`);
       }
