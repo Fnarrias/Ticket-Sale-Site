@@ -103,9 +103,9 @@ const Nav = () => {
                 </ReactLink>
               </Button>
               <Button>
-                <ReactLink to="/concierto" style={{ textDecoration: "none" }}>
+                <ReactLink to="/ciudades" style={{ textDecoration: "none" }}>
                   <Link underline="none" sx={{ color: "#ffffff" }}>
-                    Conciertos
+                    Ciudades
                   </Link>
                 </ReactLink>
               </Button>

@@ -5,10 +5,11 @@ import Login from "./components/Login";
 import Registro from "./components/Registro";
 import Nav from "./components/Nav";
 import Artistas from "./views/Artistas";
-import Conciertos from "./views/Conciertos";
+import Ciudades from "./views/Ciudades";
 import Genero from "./views/Genero";
 import Home from "./views/Home";
 import IngresarConcierto from "./views/IngresarConcierto";
+import Listadetalle from "./components/Listadetalle";
 
 const App = () => {
   return (
@@ -31,11 +32,20 @@ const App = () => {
           <Route path="/genero">
             <Genero />
           </Route>
-          <Route path="/concierto">
-            <Conciertos />
+          <Route path="/ciudades">
+            <Ciudades />
           </Route>
           <Route path="/artista" exact>
             <Artistas />
+          </Route>
+          <Route path="/artista/:nombreArtista" exact>
+            <Listadetalle />
+          </Route>
+          <Route path="/ciudades/:nombreCiudad" exact>
+            <Listadetalle />
+          </Route>
+          <Route path="/genero/:nombreGenero" exact>
+            <Listadetalle />
           </Route>
         </Switch>
       </Router>
