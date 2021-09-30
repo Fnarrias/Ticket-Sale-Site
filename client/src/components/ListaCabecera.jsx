@@ -18,13 +18,13 @@ const ListaCabecera = (props) => {
   console.log(`page: ${page}`);
 
   const mainListStyle = {
-    backgroundColor: "#C3498F",
+    backgroundColor: "#6E6D8E",
     padding: "4vh",
   };
 
   const mainTypo = {
     textAlling: "center",
-    backgroundColor: "#634B9A",
+    backgroundColor: "#812D62",
     color: "#ffffff",
     height: "5vh",
     margin: "3vh auto",
