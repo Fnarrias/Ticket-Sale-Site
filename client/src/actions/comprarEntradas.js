@@ -1,4 +1,4 @@
-const comprarEntradas = async (asiento, cantidad, id) => {
+const comprarEntradas = async (asiento, cantidad, id, userId) => {
   //recibir id usuario como parametro
   try {
     const resultado = await fetch(`/api/concierto/entradas/${id}`, {
@@ -9,6 +9,7 @@ const comprarEntradas = async (asiento, cantidad, id) => {
       body: JSON.stringify({
         nombreSector: asiento,
         cantidad: cantidad,
+        _id: userId
         //mandar id del usuario
       }),
     });

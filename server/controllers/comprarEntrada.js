@@ -1,10 +1,12 @@
 const { ConciertoModel } = require("../models/Concierto");
+const { UserModel } = require("../models/User");
 
 const comprarEntrada = async (req, res) => {
   try {
     const { conciertoID } = req.params;
-    const { nombreSector, cantidad } = req.body;
+    const { nombreSector, cantidad, _id } = req.body;
     // recibir id de usuario como parametro
+    //console.log(_id)
 
     const doc = await ConciertoModel.findById(conciertoID);
 
@@ -13,8 +15,18 @@ const comprarEntrada = async (req, res) => {
     }
 
     //agregar el concierto al usuario
+    const doc_usuario = await UserModel.findOne({_id: _id})
+    
+    doc_usuario.conciertoscomprados.push(
+      {
+      sector: nombreSector, 
+      cantidad: cantidad, 
+      nombre: doc.nombre, 
+      conciertoID: conciertoID}
+      );
 
     await doc.save();
+    await doc_usuario.save();
     res.json(doc);
   } catch (e) {
     console.error(e);

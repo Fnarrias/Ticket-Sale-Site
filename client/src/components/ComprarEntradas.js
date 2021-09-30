@@ -12,7 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 
-const ComprarEntradas = () => {
+const ComprarEntradas = (prop) => {
+  const {userId} = prop
   const [asientos, setAsientos] = useState([]);
   const [comproEntrada, setComproEntrada] = useState(0);
   const { idConcierto } = useParams();
@@ -24,7 +25,7 @@ const ComprarEntradas = () => {
   }, [idConcierto, comproEntrada]);
 
   const comprar = async (asiento, cantidad, conciertoId) => {
-    await comprarEntradas(asiento, cantidad, conciertoId);
+    await comprarEntradas(asiento, cantidad, conciertoId, userId);
 
     setComproEntrada(comproEntrada + 1);
   };

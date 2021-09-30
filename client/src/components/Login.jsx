@@ -8,7 +8,7 @@ import autenticar from "../actions/Autenticacion";
 import { useHistory } from "react-router";
 
 const Login = (props) => {
-  const { setUserLogged } = props;
+  const { setUserLogged, setUserId} = props;
   let history = useHistory();
   //Estilos
   const paperStyle = {
@@ -46,11 +46,12 @@ const Login = (props) => {
           .forEach((input) => (input.value = ""));
           window.alert("Acceso correcto");
           setUserLogged(true);
-          console.log(`nombre ${nombre}`)
-          console.log(`id ${id}`)
+          console.log(`nombre ${nombre}`);
+          console.log(`id ${id}`);
           //rescatar id usuario
+          setUserId(id);
           //redirect home
-          history.push("/")
+          history.push("/");
 
       } else {
         window.alert(`No se pudo ingresar. ${message}`);

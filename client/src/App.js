@@ -14,6 +14,7 @@ import Listadetalle from "./components/Listadetalle";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(false);
+  const [userId, setUserId] = useState("");
   return (
     <>
       <Router>
@@ -26,7 +27,7 @@ const App = () => {
             <IngresarConcierto />
           </Route>
           <Route path="/login">
-            <Login setUserLogged={setUserLogged} />
+            <Login setUserLogged={setUserLogged} setUserId={setUserId} />
           </Route>
           <Route path="/registro">
             <Registro />
@@ -51,7 +52,7 @@ const App = () => {
           </Route>
           {/*//! mandar como prop el setuser para validacion de user*/}
           <Route path="/entradas/:idConcierto" exact>
-            <ComprarEntradas />
+            <ComprarEntradas userId={userId}/>
           </Route>
         </Switch>
       </Router>
