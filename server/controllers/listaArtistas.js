@@ -14,6 +14,7 @@ const listaArtistas = async (req, res) => {
       arrayArtistas.push({
         nombre: i.artista.nombre,
         minCapacidad: i.artista.minCapacidad,
+        urlImagen: i.artista.urlImagen
       });
 
     const listaUnica = getUniqueListBy(arrayArtistas, "nombre");

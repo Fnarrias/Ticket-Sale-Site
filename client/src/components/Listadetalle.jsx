@@ -88,7 +88,7 @@ const Listadetalle = (props) => {
         <CardMedia
           component="img"
           height="200"
-          image=""
+          image={`${element.urlImagen}`}
           alt={`${element.nombre}`}
         />
         <CardContent style={cardStyle.cardContent}>
@@ -108,6 +108,7 @@ const Listadetalle = (props) => {
             variant="contained"
             style={cardStyle.buttonStyle}
           >
+            
             <ReactLink
               to={`/entradas/${element._id}`}
               style={{ textDecoration: "none" }}
@@ -117,6 +118,7 @@ const Listadetalle = (props) => {
               </Link>
             </ReactLink>
           </Button>
+          
         </CardActions>
       </Card>
     </Grid>

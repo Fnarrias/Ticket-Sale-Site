@@ -13,7 +13,9 @@ import {
 
 const ListaCabecera = (props) => {
   const { listado, tipo, page } = props;
-  console.log(listado, tipo);
+  console.log(`listado: ${JSON.stringify(listado)}`);
+  console.log(`Tipo: ${tipo}`);
+  console.log(`page: ${page}`);
 
   const mainListStyle = {
     backgroundColor: "#A4B3B6",
@@ -64,8 +66,8 @@ const ListaCabecera = (props) => {
       <Card align="center" key={index}>
         <CardMedia
           component="img"
-          height="200"
-          image=""
+          height="300"
+          image={`${element.urlImagen}`}
           alt={`${element.nombre}`}
         />
         <CardContent style={cardStyle.cardContent}>

@@ -14,10 +14,11 @@ const listaCiudades = async (req, res) => {
       arrayCiudades.push({
         ciudad: i.recinto.ciudad,
         nombre: i.recinto.nombre,
+        urlImagen: i.recinto.urlImagen
       });
 
     const listaUnica = getUniqueListBy(arrayCiudades, "ciudad").map(
-      (element) => ({ nombre: element.ciudad })
+      (element) => ({ nombre: element.ciudad, urlImagen: element.urlImagen })
     );
 
     console.log(listaUnica);
