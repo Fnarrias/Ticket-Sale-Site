@@ -11,7 +11,6 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 
 const ComprarEntradas = () => {
   const [asientos, setAsientos] = useState([]);
@@ -99,16 +98,13 @@ const ComprarEntradas = () => {
           sx={{ flexDirection: "column", justifyContent: "center" }}
           style={cardStyle.cardActionStyle}
         >
-          {/* //!Esta tirando error de Undefined revisar */}
           <Button
             size="large"
             variant="contained"
             style={cardStyle.buttonStyle}
             onClick={() => comprar(element.nombre, 1, idConcierto)}
           >
-            <Link style={{ textDecoration: "none", color: "#ffffff" }}>
-              Comprar Entrada {element.nombre}
-            </Link>
+            Comprar Entrada {element.nombre}
           </Button>
         </CardActions>
       </Card>
