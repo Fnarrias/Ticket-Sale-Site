@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 const newUser = async (req, res) => {
   try {
-    const {nombre, email, password } = req.body;
+    const {nombre, email, password} = req.body;
     const hashedPassword = await bcrypt.hash(password, 10)
 
     // console.log(salt);
@@ -14,7 +14,7 @@ const newUser = async (req, res) => {
         nombre: nombre,
         email: email,
         password: hashedPassword,
-        conciertosComprados: []
+        conciertoscomprados: []
     });
 
 

@@ -4,10 +4,10 @@ POST http://localhost:5000/api/user/newuser
 Content-Type: application/json
 
 {
-    "nombre": "Juan Pérez 5",
-    "email": "jperez5@gmail.com",
+    "nombre": "Juan Pérez",
+    "email": "jperez@gmail.com",
     "password": "123456",
-    "conciertosComprados": []
+    "conciertoscomprados":[]
 }
 
 
