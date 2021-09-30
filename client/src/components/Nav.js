@@ -10,23 +10,22 @@ import {
   Paper,
 } from "@mui/material";
 import BuscaConcierto from "./BuscaConcierto";
-import Imagen from "../images/pexels-eberhard-grossgasteiger-844297.jpg";
+import Imagen from "../images/pexels-luis-quintero-3101522.jpg";
 import UsuarioLogueado from "./UsuarioLogueado";
 
 const Nav = (props) => {
   const { userLogged, setUserLogged } = props;
   console.log(`Usuario logueado prop ${userLogged}`);
-  const [hiddeLogin, setHiddeLogin] = useState({display: "block"});
+  const [hiddeLogin, setHiddeLogin] = useState({ display: "block" });
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(`Usuario logueado ${userLogged}`);
-    if(userLogged === true){
-      setHiddeLogin({display: "none"})
-      
-    }else{
-      setHiddeLogin({display: "block"})
+    if (userLogged === true) {
+      setHiddeLogin({ display: "none" });
+    } else {
+      setHiddeLogin({ display: "block" });
     }
-  }, [userLogged])
+  }, [userLogged]);
 
   const navStyle = {
     backgroundImage: `url(${Imagen})`,
@@ -36,6 +35,9 @@ const Nav = (props) => {
     textAlign: "center",
     ticketStyle: {
       marginBottom: "0px",
+      color: "#D83F87",
+      border: "10px #44318D ",
+      borderStyle: "double  ",
     },
     boxStyle: { marginBottom: "5vh" },
     navFix: {
@@ -72,7 +74,12 @@ const Nav = (props) => {
                   </ReactLink>
                 </Button>
               </Typography>
-              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged} userid="id usuario"/>}
+              {userLogged && (
+                <UsuarioLogueado
+                  setUserLogged={setUserLogged}
+                  userid="id usuario"
+                />
+              )}
             </Toolbar>
           </AppBar>
         </Box>
@@ -81,6 +88,7 @@ const Nav = (props) => {
           component="div"
           gutterBottom
           style={navStyle.ticketStyle}
+          sx={{ fontWeight: "bold" }}
         >
           Live -Ticket
         </Typography>
