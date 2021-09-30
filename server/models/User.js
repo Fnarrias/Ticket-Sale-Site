@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const UserSchema = new mongoose.Schema({
     nombre:{
         type: String,
@@ -18,10 +17,12 @@ const UserSchema = new mongoose.Schema({
         required: true,
         minlength: [5, "El password del usuario debe ser de almenos 5 caracteres de largo"]
     },
-    conciertosComprados:{
-        type: Array,
+    
+    conciertoscomprados:{
+        type: Array
     }
-})
+    
+});
 
 
 const UserModel = mongoose.model("User", UserSchema);

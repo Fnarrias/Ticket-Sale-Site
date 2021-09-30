@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React from "react";
 import { useEffect, useState } from "react";
 import fetchListaArtistas from "../actions/fetchListaArtistas";
@@ -10,11 +11,15 @@ const Artistas = () => {
     fetchListaArtistas().then((res) => setArtistas(res.data));
   }, []);
 
+  const styles = {
+    backgroundColor: "#2A1B3D",
+    padding: "10vh",
+  };
+
   return (
-    <div>
-      <h1>Artistas</h1>
-      <ListaCabecera listado={artistas} tipo="artista" />
-    </div>
+    <Grid style={styles}>
+      <ListaCabecera listado={artistas} tipo="artista" page="Artista" />
+    </Grid>
   );
 };
 

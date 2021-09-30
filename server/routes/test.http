@@ -56,9 +56,6 @@ Content-Type: application/json
 {
     "nombreSector": "galeria",
     "cantidad": 1
-    
-            
-    
 }
 
 ### Array buscador

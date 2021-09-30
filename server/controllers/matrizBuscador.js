@@ -22,11 +22,16 @@ const matrizBuscador = async (req, res) => {
   const generosSet = Array.from(new Set(tempGeneros));
   const ciudadesSet = Array.from(new Set(tempCiudades));
 
-  for (i of artistasSet) doc.push([i, "artista"]);
-  for (i of generosSet) doc.push([i, "genero"]);
-  for (i of ciudadesSet) doc.push([i, "ciudad"]);
+  for (i of artistasSet) doc.push({name:i, type:"artista"});
+  for (i of generosSet) doc.push({name:i, type:"genero"});
+  for (i of ciudadesSet) doc.push({name:i, type:"ciudad"});
 
-  console.log(doc);
+  //console.log(doc);
+
+  if (!doc) return res.status(404).json({ message: "Usuario o password erróneos" })
+  
+  res.status(201).json(doc);
+
 };
 
 module.exports = matrizBuscador;
