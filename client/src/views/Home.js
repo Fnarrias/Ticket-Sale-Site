@@ -16,7 +16,11 @@ const Home = () => {
   };
   return (
     <Grid style={styles}>
-      <ListaCabecera listado={conciertos} tipo="concierto" page="Conciertos" />
+      <ListaCabecera
+        listado={conciertos}
+        tipo="concierto"
+        page="Todos los conciertos"
+      />
     </Grid>
   );
 };

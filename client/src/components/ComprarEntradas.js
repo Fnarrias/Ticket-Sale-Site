@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 
 const ComprarEntradas = (prop) => {
-  const { userId } = prop;
+  const { userId, userLogged } = prop;
   const [asientos, setAsientos] = useState([]);
   const [comproEntrada, setComproEntrada] = useState(0);
   const { idConcierto } = useParams();
@@ -25,9 +25,15 @@ const ComprarEntradas = (prop) => {
   }, [idConcierto, comproEntrada]);
 
   const comprar = async (asiento, cantidad, conciertoId) => {
-    await comprarEntradas(asiento, cantidad, conciertoId, userId);
+    if (userLogged === false) {
+      window.alert(
+        "Tiene que estar Logueado o registrarse para comprar un Ticket"
+      );
+    } else {
+      await comprarEntradas(asiento, cantidad, conciertoId, userId);
 
-    setComproEntrada(comproEntrada + 1);
+      setComproEntrada(comproEntrada + 1);
+    }
   };
 
   const mainListStyle = {
@@ -117,7 +123,7 @@ const ComprarEntradas = (prop) => {
           style={mainTypo}
           align="center"
         >
-          Tickets Disponibles:
+          Tickets Disponibles :
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {listaPrecios}

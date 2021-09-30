@@ -18,13 +18,14 @@ const ListaCabecera = (props) => {
   console.log(`page: ${page}`);
 
   const mainListStyle = {
-    backgroundColor: "#A4B3B6",
+    backgroundColor: "#C3498F",
     padding: "4vh",
   };
 
   const mainTypo = {
     textAlling: "center",
-    backgroundColor: "#67677A",
+    backgroundColor: "#634B9A",
+    color: "#ffffff",
     height: "5vh",
     margin: "3vh auto",
     padding: "5vh",
@@ -116,6 +117,7 @@ const ListaCabecera = (props) => {
         component="div"
         style={mainTypo}
         align="center"
+        sx={{ fontFamily: "Monospace" }}
       >{`${page}`}</Typography>
       <Grid container spacing={4} justifyContent="center">
         {lista}

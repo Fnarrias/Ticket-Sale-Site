@@ -18,7 +18,11 @@ const Artistas = () => {
 
   return (
     <Grid style={styles}>
-      <ListaCabecera listado={artistas} tipo="artista" page="Artista" />
+      <ListaCabecera
+        listado={artistas}
+        tipo="artista"
+        page="Conciertos por artistas"
+      />
     </Grid>
   );
 };

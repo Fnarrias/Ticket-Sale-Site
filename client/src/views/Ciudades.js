@@ -17,7 +17,11 @@ const Ciudades = () => {
 
   return (
     <Grid style={styles}>
-      <ListaCabecera listado={ciudades} tipo="ciudad" page="Ciudades" />
+      <ListaCabecera
+        listado={ciudades}
+        tipo="ciudad"
+        page="Conciertos por Ciudades"
+      />
     </Grid>
   );
 };
