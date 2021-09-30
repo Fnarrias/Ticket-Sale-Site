@@ -20,6 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     conciertosComprados:{
         type: Array,
+        //{id concierto, asiento}
     }
 })
 
