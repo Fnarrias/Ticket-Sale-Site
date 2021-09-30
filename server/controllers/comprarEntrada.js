@@ -16,17 +16,45 @@ const comprarEntrada = async (req, res) => {
 
     //agregar el concierto al usuario
     const doc_usuario = await UserModel.findOne({_id: _id})
+
+    let flagSuma = false
+    let indice = 0;
+    let encontrado = -1;
     
+    for (let i of doc_usuario.conciertoscomprados){
+      if (i.conciertoID == conciertoID){ 
+        encontrado = indice;
+        flagSuma = true;
+      }
+      indice += 1;
+    }
+
+    console.log(doc_usuario);
+
+
+    if(flagSuma === false){
     doc_usuario.conciertoscomprados.push(
       {
       sector: nombreSector, 
       cantidad: cantidad, 
       nombre: doc.nombre, 
       conciertoID: conciertoID}
-      );
+      )
+    }else{
+      doc_usuario.conciertoscomprados.set(encontrado, 
+        {
+          sector: nombreSector, 
+          cantidad: cantidad + 1, 
+          nombre: doc.nombre, 
+          conciertoID: conciertoID}
+      )
+    }
+
+
 
     await doc.save();
     await doc_usuario.save();
+
     res.json(doc);
   } catch (e) {
     console.error(e);

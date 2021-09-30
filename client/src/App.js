@@ -11,6 +11,7 @@ import Home from "./views/Home";
 import ComprarEntradas from "./components/ComprarEntradas";
 import IngresarConcierto from "./views/IngresarConcierto";
 import Listadetalle from "./components/Listadetalle";
+import HomeUsuario from "./views/HomeUsuario";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(false);
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <Nav userLogged={userLogged} setUserLogged={setUserLogged} />
+        <Nav userLogged={userLogged} setUserLogged={setUserLogged} userId={userId} />
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -53,6 +54,9 @@ const App = () => {
           {/*//! mandar como prop el setuser para validacion de user*/}
           <Route path="/entradas/:idConcierto" exact>
             <ComprarEntradas userId={userId}/>
+          </Route>
+          <Route path="/usuario/:userId" exact>
+            <HomeUsuario/>
           </Route>
         </Switch>
       </Router>

@@ -14,7 +14,7 @@ import Imagen from "../images/pexels-eberhard-grossgasteiger-844297.jpg";
 import UsuarioLogueado from "./UsuarioLogueado";
 
 const Nav = (props) => {
-  const { userLogged, setUserLogged } = props;
+  const { userLogged, setUserLogged, userId } = props;
   console.log(`Usuario logueado prop ${userLogged}`);
   const [hiddeLogin, setHiddeLogin] = useState({display: "block"});
 
@@ -72,7 +72,7 @@ const Nav = (props) => {
                   </ReactLink>
                 </Button>
               </Typography>
-              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged} userid="id usuario"/>}
+              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged} userId={userId}/>}
             </Toolbar>
           </AppBar>
         </Box>
