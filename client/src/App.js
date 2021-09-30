@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
@@ -13,10 +13,11 @@ import IngresarConcierto from "./views/IngresarConcierto";
 import Listadetalle from "./components/Listadetalle";
 
 const App = () => {
+  const [userLogged, setUserLogged] = useState(false);
   return (
     <>
       <Router>
-        <Nav />
+        <Nav userLogged = {userLogged} setUserLogged = {setUserLogged}/>
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -25,7 +26,7 @@ const App = () => {
             <IngresarConcierto />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login setUserLogged = {setUserLogged}/>
           </Route>
           <Route path="/registro">
             <Registro />

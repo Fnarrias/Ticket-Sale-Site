@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link as ReactLink } from "react-router-dom";
 import {
   AppBar,
@@ -11,8 +11,23 @@ import {
 } from "@mui/material";
 import BuscaConcierto from "./BuscaConcierto";
 import Imagen from "../images/pexels-eberhard-grossgasteiger-844297.jpg";
+import UsuarioLogueado from "./UsuarioLogueado";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { userLogged, setUserLogged } = props;
+  console.log(`Usuario logueado prop ${userLogged}`);
+  const [hiddeLogin, setHiddeLogin] = useState({display: "block"});
+
+  useEffect(()=>{
+    console.log(`Usuario logueado ${userLogged}`);
+    if(userLogged === true){
+      setHiddeLogin({display: "none"})
+      
+    }else{
+      setHiddeLogin({display: "block"})
+    }
+  }, [userLogged])
+
   const navStyle = {
     backgroundImage: `url(${Imagen})`,
     height: "auto",
@@ -38,7 +53,7 @@ const Nav = () => {
             {" "}
             {/* //!Static para evitar que se sobrepongan */}
             <Toolbar sx={{ flexDirection: "row-reverse" }}>
-              <Typography>
+              <Typography style={hiddeLogin}>
                 <Button
                   variant="contained"
                   sx={{ mr: 2, backgroundColor: "#44318d" }}
@@ -57,6 +72,7 @@ const Nav = () => {
                   </ReactLink>
                 </Button>
               </Typography>
+              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged}/>}
             </Toolbar>
           </AppBar>
         </Box>

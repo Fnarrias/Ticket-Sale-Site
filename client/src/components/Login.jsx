@@ -6,7 +6,8 @@ import { Avatar, Button, Link, TextField, Typography } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import autenticar from "../actions/Autenticacion";
 
-const Login = () => {
+const Login = (props) => {
+  const { setUserLogged } = props;
   //Estilos
   const paperStyle = {
     padding: 20,
@@ -41,7 +42,8 @@ const Login = () => {
         form
           .querySelectorAll(`input:not([type="submit"])`)
           .forEach((input) => (input.value = ""));
-        window.alert("Acceso correcto");
+          window.alert("Acceso correcto");
+          setUserLogged(true);
       } else {
         window.alert(`No se pudo ingresar. ${message}`);
       }
