@@ -17,8 +17,6 @@ const crearConcierto = async (req, res) => {
     if (!docArtista)
       throw new Error("el artista ingresado no existe en la base de datos");
 
-    // await JSON.parse(docArtista);
-
     const artistaNombre = docArtista[0].nombre;
     const artistaGenero = docArtista[0].genero;
     const artistaMinCapacidad = docArtista[0].minCapacidad;
@@ -55,7 +53,7 @@ const crearConcierto = async (req, res) => {
       descripción,
     });
 
-    console.log(doc.recinto.sectores);
+    console.log(doc.recinto.nombre);
 
     await doc.save();
 
