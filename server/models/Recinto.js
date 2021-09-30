@@ -15,6 +15,9 @@ const RecintoSchema = new Schema({
   capacidadTotal: {
     type: Number,
   },
+  urlImagen:{
+    type: String
+  }
 });
 
 const RecintoModel = model(`recinto`, RecintoSchema);

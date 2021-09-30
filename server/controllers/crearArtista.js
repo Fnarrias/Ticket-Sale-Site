@@ -2,7 +2,7 @@ const { ArtistaModel } = require("../models/Artista");
 
 const crearArtista = async (req, res) => {
   try {
-    const { nombre, genero, minCapacidad } = req.body;
+    const { nombre, genero, minCapacidad, urlImagen } = req.body;
 
     console.log(nombre);
 
@@ -10,6 +10,7 @@ const crearArtista = async (req, res) => {
       nombre,
       genero,
       minCapacidad,
+      urlImagen
     });
 
     await doc.save();

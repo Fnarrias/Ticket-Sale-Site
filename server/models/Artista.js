@@ -11,6 +11,9 @@ const ArtistaSchema = new Schema({
   minCapacidad: {
     type: Number,
   },
+  urlImagen:{
+    type: String
+  }
 });
 
 const ArtistaModel = model(`artista`, ArtistaSchema);

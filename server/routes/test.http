@@ -3,9 +3,10 @@ POST http://localhost:5000/api/artista/new
 Content-Type: application/json
 
 {
-    "nombre": "Daddy Yankee",
-    "genero": [ "Reggeton", "Pop" ],
-    "minCapacidad": 1000
+    "nombre": "Francisca valenzuela",
+    "genero": [ "Jazz", "Pop", "Pop alternativo" ],
+    "minCapacidad": 1000,
+    "urlImagen": "http://todomejora.org/wp-content/uploads/2014/10/Francisca-Valenzuela-20141014-articulo-01_0-300x300.jpg"
             
     
 }
@@ -15,9 +16,10 @@ POST http://localhost:5000/api/recinto
 Content-Type: application/json
 
 {
-    "nombre": "LOL Arena",
-    "sectores": [ {"nombre": "galeria", "capacidad": 3000}, {"nombre": "platea", "capacidad": 300}, {"nombre": "asiento frontal", "capacidad": 500}, {"nombre": "frontal vip", "capacidad": 200 } ],
-    "ciudad": "Arica"
+    "nombre": "Cancha de Dichato",
+    "sectores": [ {"nombre": "cancha", "capacidad": 10000}, {"nombre": "vip", "capacidad": 5000}],
+    "ciudad": "Dichato",
+    "urlImagen": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/25/ae/caption.jpg?w=300&h=300&s=1"
             
     
 }
@@ -28,12 +30,13 @@ POST http://localhost:5000/api/concierto
 Content-Type: application/json
 
 {
-    "nombre": "Daddy por siempre",
-    "nombreArtista": "Daddy Yankee",
-    "nombreRecinto": "Discord Arena",
+    "nombre": "Tómame Tour",
+    "nombreArtista": "Francisca valenzuela",
+    "nombreRecinto": "Cancha de Dichato",
     "fecha": "2021-11-23",
-    "descripción": "A ella le gusta la gasolina y dale más gasolina",
-    "precios": [{"nombre":"galeria", "precio": 2000}, {"nombre":"platea", "precio": 5000} ]
+    "descripción": "Francisca Valenzuela se toma los escenarios del sur de chile con su nuevo tour Tómame que promociona su último álbum tajo Abierto",
+    "precios": [ {"nombre": "cancha", "capacidad": 10000}, {"nombre": "vip", "capacidad": 5000}],
+    "urlImagen": "http://soloartistaschilenos.cl/wp-content/uploads/2018/10/41669907_10156613042709801_7175841692401008640_n-300x300.jpg"
 
 }
 

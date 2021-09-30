@@ -10,6 +10,9 @@ const ConciertoSchema = new Schema({
   recinto: RecintoSchema,
   fecha: Date,
   descripción: String,
+  urlImagen:{
+    type: String
+  }
 });
 
 const ConciertoModel = model(`concierto`, ConciertoSchema);

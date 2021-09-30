@@ -2,7 +2,7 @@ const { RecintoModel } = require("../models/Recinto");
 
 const crearRecinto = async (req, res) => {
   try {
-    const { nombre, ciudad, sectores } = req.body;
+    const { nombre, ciudad, sectores, urlImagen } = req.body;
 
     let capacidadTotal = 0;
 
@@ -15,6 +15,7 @@ const crearRecinto = async (req, res) => {
       ciudad,
       sectores,
       capacidadTotal,
+      urlImagen
     });
 
     await doc.save();
