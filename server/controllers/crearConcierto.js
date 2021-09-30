@@ -53,8 +53,7 @@ const crearConcierto = async (req, res) => {
       descripción,
     });
 
-    console.log(doc.recinto.nombre);
-
+    await ConciertoModel.collection.dropIndexes();
     await doc.save();
 
     res.status(201).json(doc);

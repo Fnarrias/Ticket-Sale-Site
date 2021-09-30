@@ -15,7 +15,7 @@ POST http://localhost:5000/api/recinto
 Content-Type: application/json
 
 {
-    "nombre": "Discord Arena",
+    "nombre": "LOL Arena",
     "sectores": [ {"nombre": "galeria", "capacidad": 3000}, {"nombre": "platea", "capacidad": 300}, {"nombre": "asiento frontal", "capacidad": 500}, {"nombre": "frontal vip", "capacidad": 200 } ],
     "ciudad": "Arica"
             
@@ -30,8 +30,8 @@ Content-Type: application/json
 {
     "nombre": "Metallica World Tour",
     "nombreArtista": "Metallica",
-    "nombreRecinto": "Carolina Arena",
-    "fecha": "2021-10-05",
+    "nombreRecinto": "LOL Arena",
+    "fecha": "2021-10-15",
     "descripción": "La última gira de la legendaria banda, promocionando su último album",
     "precios": [{"nombre":"galeria", "precio": 5000}, {"nombre":"platea", "precio": 15000}, {"nombre":"asiento frontal", "precio": 20000}, {"nombre":"frontal vip", "precio": 50000} ]
     
@@ -56,6 +56,9 @@ Content-Type: application/json
 {
     "nombreSector": "galeria",
     "cantidad": 1
+    
+            
+    
 }
 
 ### Array buscador
