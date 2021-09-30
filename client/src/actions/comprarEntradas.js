@@ -17,6 +17,7 @@ const comprarEntradas = async (asiento, cantidad, id) => {
     if (!resultado.ok) throw new Error(parsed.message);
     else {
       window.alert("gracias por tu compra");
+      //agregar el concierto al usuario
     }
 
     return { success: true, data: parsed };

@@ -72,7 +72,7 @@ const Nav = (props) => {
                   </ReactLink>
                 </Button>
               </Typography>
-              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged}/>}
+              {userLogged && <UsuarioLogueado setUserLogged = {setUserLogged} userid="id usuario"/>}
             </Toolbar>
           </AppBar>
         </Box>

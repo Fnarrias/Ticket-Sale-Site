@@ -5,15 +5,13 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton } from '@mui/material';
 
 const UsuarioLogueado = (props) => {
-    const {setUserLogged} = props
+    const {setUserLogged, userid} = props
     const avatarStyle = { backgroundColor: "#d83f87", margin:5 };
 
     const handleLogOut = ()=>{
         setUserLogged(false);
         console.log('logout')
     }
-
-    
 
     return (
         <>
