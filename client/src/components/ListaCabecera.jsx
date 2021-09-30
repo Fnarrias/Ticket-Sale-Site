@@ -67,7 +67,7 @@ const ListaCabecera = (props) => {
       <Card align="center" key={index}>
         <CardMedia
           component="img"
-          height="300"
+          height="auto"
           image={`${element.urlImagen}`}
           alt={`${element.nombre}`}
         />
