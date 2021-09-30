@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <Nav userLogged = {userLogged} setUserLogged = {setUserLogged}/>
+        <Nav userLogged={userLogged} setUserLogged={setUserLogged} />
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -26,7 +26,7 @@ const App = () => {
             <IngresarConcierto />
           </Route>
           <Route path="/login">
-            <Login setUserLogged = {setUserLogged}/>
+            <Login setUserLogged={setUserLogged} />
           </Route>
           <Route path="/registro">
             <Registro />
@@ -49,6 +49,7 @@ const App = () => {
           <Route path="/artistas" exact>
             <Artistas />
           </Route>
+          {/*//! mandar como prop el setuser para validacion de user*/}
           <Route path="/entradas/:idConcierto" exact>
             <ComprarEntradas />
           </Route>
