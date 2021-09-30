@@ -26,7 +26,7 @@ const matrizBuscador = async (req, res) => {
   for (i of generosSet) doc.push({name:i, type:"genero"});
   for (i of ciudadesSet) doc.push({name:i, type:"ciudad"});
 
-  console.log(doc);
+  //console.log(doc);
 
   if (!doc) return res.status(404).json({ message: "Usuario o password erróneos" })
   
