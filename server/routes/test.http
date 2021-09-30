@@ -28,15 +28,13 @@ POST http://localhost:5000/api/concierto
 Content-Type: application/json
 
 {
-    "nombre": "Metallica World Tour",
-    "nombreArtista": "Metallica",
-    "nombreRecinto": "LOL Arena",
-    "fecha": "2021-10-15",
-    "descripción": "La última gira de la legendaria banda, promocionando su último album",
-    "precios": [{"nombre":"galeria", "precio": 5000}, {"nombre":"platea", "precio": 15000}, {"nombre":"asiento frontal", "precio": 20000}, {"nombre":"frontal vip", "precio": 50000} ]
-    
-            
-    
+    "nombre": "Daddy por siempre",
+    "nombreArtista": "Daddy Yankee",
+    "nombreRecinto": "Discord Arena",
+    "fecha": "2021-11-23",
+    "descripción": "A ella le gusta la gasolina y dale más gasolina",
+    "precios": [{"nombre":"galeria", "precio": 2000}, {"nombre":"platea", "precio": 5000} ]
+
 }
 
 ### Todos los  Conciertos

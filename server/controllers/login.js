@@ -18,6 +18,7 @@ try {
             return res.status(401).json({ message: "Usuario o password erróneos" })
         }else{
             return res.status(200).json({ message: true })
+            //enviar en el body el id de usuario
         }
     }
 

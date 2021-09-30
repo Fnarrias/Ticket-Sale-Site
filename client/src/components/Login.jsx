@@ -44,6 +44,7 @@ const Login = (props) => {
           .forEach((input) => (input.value = ""));
           window.alert("Acceso correcto");
           setUserLogged(true);
+          //rescatar id usuario
       } else {
         window.alert(`No se pudo ingresar. ${message}`);
       }

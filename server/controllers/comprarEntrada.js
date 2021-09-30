@@ -4,12 +4,15 @@ const comprarEntrada = async (req, res) => {
   try {
     const { conciertoID } = req.params;
     const { nombreSector, cantidad } = req.body;
+    // recibir id de usuario como parametro
 
     const doc = await ConciertoModel.findById(conciertoID);
 
     for (let i of doc.recinto.sectores) {
       if (i.nombre === nombreSector) i.capacidad = i.capacidad - cantidad;
     }
+
+    //agregar el concierto al usuario
 
     await doc.save();
     res.json(doc);
