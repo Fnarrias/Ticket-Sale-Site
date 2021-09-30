@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React from "react";
 import { useEffect, useState } from "react";
 import fetchListaGeneros from "../actions/fetchListaGeneros";
@@ -10,11 +11,15 @@ const Genero = () => {
     fetchListaGeneros().then((res) => setGeneros(res.data));
   }, []);
 
+  const styles = {
+    backgroundColor: "#2A1B3D",
+    padding: "10vh",
+  };
+
   return (
-    <div>
-      <h1>genero</h1>
-      <ListaCabecera listado={generos} tipo="genero" />
-    </div>
+    <Grid style={styles}>
+      <ListaCabecera listado={generos} tipo="genero" page="Generos" />
+    </Grid>
   );
 };
 
