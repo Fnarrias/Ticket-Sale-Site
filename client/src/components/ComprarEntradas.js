@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 
 const ComprarEntradas = (prop) => {
-  const {userId} = prop
+  const { userId } = prop;
   const [asientos, setAsientos] = useState([]);
   const [comproEntrada, setComproEntrada] = useState(0);
   const { idConcierto } = useParams();
@@ -52,11 +52,6 @@ const ComprarEntradas = (prop) => {
     backgroundColor: "#D83F87",
     padding: 20,
 
-    cardMedia: {
-      height: "300px",
-      width: "300px",
-    },
-
     cardContent: {
       backgroundColor: "#44318D",
       color: "#ffffff",
@@ -84,8 +79,8 @@ const ComprarEntradas = (prop) => {
       <Card align="center" key={index}>
         <CardMedia
           component="img"
-          height="200"
-          image=""
+          height="auto"
+          image={`/assets/images/${element.nombre}.png`}
           alt={`${element.nombre}`}
         />
         <CardContent style={cardStyle.cardContent}>
