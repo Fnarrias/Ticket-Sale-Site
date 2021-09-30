@@ -18,7 +18,7 @@ const crearRecinto = async (req, res) => {
     });
 
     await doc.save();
-
+    await RecintoModel.collection.dropIndexes();
     res.status(201).json(doc);
   } catch (e) {
     console.error(e);

@@ -82,7 +82,7 @@ const Nav = (props) => {
           gutterBottom
           style={navStyle.ticketStyle}
         >
-          Live-Ticket
+          Live -Ticket
         </Typography>
       </Paper>
       <Box sx={{ flexGrow: 1 }}>

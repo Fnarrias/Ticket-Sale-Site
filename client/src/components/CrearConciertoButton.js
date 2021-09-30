@@ -28,14 +28,14 @@ const CrearConciertoButton = () => {
   };
 
   //! enlazar despues al crear concierto
-  const onClick = () => {
+  const navigate = () => {
     history.push("/registro");
   };
 
   return (
     <Grid style={buttonStyle.gridStyles}>
       <Card sx={{ maxWidth: 345, borderRadius: 2 }}>
-        <CardActionArea onClick={onClick}>
+        <CardActionArea onClick={navigate}>
           <CardMedia
             component="img"
             height="140"

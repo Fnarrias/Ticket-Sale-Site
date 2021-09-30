@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import fetchListaCiudades from "../actions/fetchListaCiudades";
 import ListaCabecera from "../components/ListaCabecera";
@@ -9,11 +10,15 @@ const Ciudades = () => {
     fetchListaCiudades().then((res) => setCiudades(res.data));
   }, []);
 
+  const styles = {
+    backgroundColor: "#2A1B3D",
+    padding: "10vh",
+  };
+
   return (
-    <div>
-      <h1>Ciudades</h1>
-      <ListaCabecera listado={ciudades} tipo="ciudad" />
-    </div>
+    <Grid style={styles}>
+      <ListaCabecera listado={ciudades} tipo="ciudad" page="Ciudades" />
+    </Grid>
   );
 };
 
