@@ -5,9 +5,11 @@ import Paper from "@mui/material/Paper";
 import { Avatar, Button, Link, TextField, Typography } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import autenticar from "../actions/Autenticacion";
+import { useHistory } from "react-router";
 
 const Login = (props) => {
   const { setUserLogged } = props;
+  let history = useHistory();
   //Estilos
   const paperStyle = {
     padding: 20,
@@ -34,7 +36,7 @@ const Login = (props) => {
     console.log(user);
 
     const login = async () => {
-      const { success, message } = await autenticar(user);
+      const { success, message, id, nombre } = await autenticar(user);
 
       console.log({ success });
 
@@ -44,7 +46,12 @@ const Login = (props) => {
           .forEach((input) => (input.value = ""));
           window.alert("Acceso correcto");
           setUserLogged(true);
+          console.log(`nombre ${nombre}`)
+          console.log(`id ${id}`)
           //rescatar id usuario
+          //redirect home
+          history.push("/")
+
       } else {
         window.alert(`No se pudo ingresar. ${message}`);
       }

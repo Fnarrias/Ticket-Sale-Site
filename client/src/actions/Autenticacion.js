@@ -10,8 +10,9 @@ const autenticar = async (payload) => {
   
       const obj = await resultado.json();
       if (!resultado.ok) throw new Error(obj.message);
-  
-      return { success: true };
+      
+
+      return { success: true, id:obj.id_usuario, nombre: obj.nombre_usuario };
     } catch (err) {
       console.log({ error: err });
       return { success: false, message: err };
