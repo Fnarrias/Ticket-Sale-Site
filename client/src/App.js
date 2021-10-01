@@ -60,7 +60,7 @@ const App = () => {
             <ComprarEntradas userId={userId} userLogged={userLogged} />
           </Route>
           <Route path="/usuario/:userId" exact>
-            <HomeUsuario />
+            <HomeUsuario userLogged={userLogged} />
           </Route>
         </Switch>
       </Router>

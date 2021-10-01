@@ -10,9 +10,10 @@ import {
   Link,
   Typography,
 } from "@mui/material";
+import EntradasCompradas from "./EntradasCompradas";
 
 const ListaCabecera = (props) => {
-  const { listado, tipo, page } = props;
+  const { listado, tipo, page, comprarEntradas } = props;
   console.log(`listado: ${JSON.stringify(listado)}`);
   console.log(`Tipo: ${tipo}`);
   console.log(`page: ${page}`);
@@ -80,7 +81,40 @@ const ListaCabecera = (props) => {
           sx={{ flexDirection: "column", justifyContent: "center" }}
           style={cardStyle.cardActionStyle}
         >
-          <Button
+          {tipo === "concierto" && comprarEntradas && (
+            <Button
+              size="large"
+              variant="contained"
+              style={cardStyle.buttonStyle}
+            >
+              <ReactLink
+                to={`/entradas/${element._id}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Link underline="none" sx={{ color: "#ffffff" }}>
+                  ver entradas de {element.nombre}
+                </Link>
+              </ReactLink>
+            </Button>
+          )}
+          {tipo !== "concierto" && comprarEntradas && (
+            <Button
+              size="large"
+              variant="contained"
+              style={cardStyle.buttonStyle}
+            >
+              <ReactLink
+                to={`/${tipo}/${element.nombre}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Link underline="none" sx={{ color: "#ffffff" }}>
+                  ver conciertos de {element.nombre}
+                </Link>
+              </ReactLink>
+            </Button>
+          )}
+          {!comprarEntradas && <EntradasCompradas />}
+          {/*<Button
             size="large"
             variant="contained"
             style={cardStyle.buttonStyle}
@@ -104,7 +138,7 @@ const ListaCabecera = (props) => {
                 </Link>
               </ReactLink>
             )}
-          </Button>
+            </Button>*/}
         </CardActions>
       </Card>
     </Grid>

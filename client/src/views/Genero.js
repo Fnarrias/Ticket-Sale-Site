@@ -18,7 +18,7 @@ const Genero = () => {
 
   return (
     <Grid style={styles}>
-      <ListaCabecera listado={generos} tipo="genero" page="Generos Musicales" />
+      <ListaCabecera listado={generos} tipo="genero" page="Generos Musicales" comprarEntradas={true}/>
     </Grid>
   );
 };

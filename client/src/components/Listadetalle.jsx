@@ -108,7 +108,6 @@ const Listadetalle = (props) => {
             variant="contained"
             style={cardStyle.buttonStyle}
           >
-            
             <ReactLink
               to={`/entradas/${element._id}`}
               style={{ textDecoration: "none" }}
@@ -118,7 +117,6 @@ const Listadetalle = (props) => {
               </Link>
             </ReactLink>
           </Button>
-          
         </CardActions>
       </Card>
     </Grid>
@@ -133,7 +131,7 @@ const Listadetalle = (props) => {
           style={mainTypo}
           align="center"
         >
-          Conciertos
+          Conciertos de {nombre}
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {listaConciertos}

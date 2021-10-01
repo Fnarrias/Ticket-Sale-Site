@@ -22,6 +22,7 @@ const Artistas = () => {
         listado={artistas}
         tipo="artista"
         page="Conciertos por artistas"
+        comprarEntradas={true}
       />
     </Grid>
   );

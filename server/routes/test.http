@@ -35,7 +35,7 @@ Content-Type: application/json
     "nombreRecinto": "Cancha de Dichato",
     "fecha": "2021-11-23",
     "descripción": "Francisca Valenzuela se toma los escenarios del sur de chile con su nuevo tour Tómame que promociona su último álbum tajo Abierto",
-    "precios": [ {"nombre": "cancha", "capacidad": 10000}, {"nombre": "vip", "capacidad": 5000}],
+    "precios": [ {"nombre": "cancha", "precio": 10000}, {"nombre": "vip", "precio": 5000}],
     "urlImagen": "http://soloartistaschilenos.cl/wp-content/uploads/2018/10/41669907_10156613042709801_7175841692401008640_n-300x300.jpg"
 
 }

@@ -20,6 +20,7 @@ const Home = () => {
         listado={conciertos}
         tipo="concierto"
         page="Todos los conciertos"
+        comprarEntradas={true}
       />
     </Grid>
   );

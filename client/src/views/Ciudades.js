@@ -21,6 +21,7 @@ const Ciudades = () => {
         listado={ciudades}
         tipo="ciudad"
         page="Conciertos por Ciudades"
+        comprarEntradas={true}
       />
     </Grid>
   );
